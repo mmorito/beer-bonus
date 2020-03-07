@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "stylelint": "stylelint 'src/**/*.scss'",
     "prettier": "npm run prettier:ts && npm prettier:html",
     "prettier:ts": "prettier --write --parser 'typescript' './**/*.ts'",
     "prettier:html": "prettier --write --parser 'angular' './**/*.html'"
