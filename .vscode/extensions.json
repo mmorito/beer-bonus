@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "mikael.angular-beastcode",
+    "angular.ng-template",
+    "johnpapa.angular2",
+    "joelday.docthis",
+    "eg2.tslint",
+    "dskwrk.vscode-generate-getter-setter",
+    "glen-84.sass-lint",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "michelemelluso.code-beautifier"
+  ]
+}

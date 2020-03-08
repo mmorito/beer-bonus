@@ -1,0 +1,29 @@
+runtime: go112
+service: default
+
+env_variables:
+
+handlers:
+  - url: /favicon.ico
+    static_files: favicon.ico
+    upload: favicon.ico
+    secure: always
+
+  - url: /((.*).html)
+    static_files: static/\1
+    upload: static/(.*)
+    secure: always
+
+  - url: /(.*\.(js|css|woff|woff2|ttf))$
+    static_files: \1
+    upload: (.*\.(js|css|woff|woff2|ttf))$
+    secure: always
+
+  - url: /(.*\.(gif|png|jpg|ico|txt))$
+    static_files: static/\1
+    upload: static/.*\.(gif|png|jpg|ico|txt)$
+    secure: always
+
+  - url: /.*
+    script: auto
+    secure: always
