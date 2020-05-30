@@ -9,9 +9,14 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "stylelint": "stylelint 'src/**/*.scss'",
-    "prettier": "npm run prettier:ts && npm prettier:html",
+    "prettier": "npm run prettier:ts && npm run prettier:html && npm run stylelint",
     "prettier:ts": "prettier --write --parser 'typescript' './**/*.ts'",
     "prettier:html": "prettier --write --parser 'angular' './**/*.html'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier"
+    }
   },
   "private": true,
   "dependencies": {
