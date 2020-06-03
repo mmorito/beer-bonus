@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "Starting deployment." `date '+%y/%m/%d %H:%M:%S'`
 
-TEMP_PATH="$EHRFS_HOME/temp"
+TEMP_PATH="$REPO_HOME/temp"
 TEMP_GOPATH="$TEMP_PATH/deploy"
 TARGET_PATH="$TEMP_GOPATH/src"
 PROJECT="mmorito-leo"  # デプロイ先のプロジェクトID
@@ -42,15 +42,15 @@ rm -rf $TEMP_PATH
 mkdir -p $TARGET_PATH
 
 # Build client
-cd $EHRFS_HOME/front/
-# npm install
-# npm run build
+cd $REPO_HOME/front/
+npm install
+npm run build
 
 # Copy client modules to temp directory
 cp -R dist/* $TARGET_PATH
 
 # Copy server modules to temp directory
-cd $EHRFS_HOME/server/
+cd $REPO_HOME/server/
 cp -R ./service_main/. $TARGET_PATH
 cp -R ./src $TARGET_PATH
 cp -R ./go.mod $TARGET_PATH
